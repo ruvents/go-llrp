@@ -163,13 +163,15 @@ func DeleteRospecResponse(messageID uint32) []byte {
 func AddRospec(messageID uint32) []byte {
 	var data = []interface{}{
 		uint16(AddRospecHeader),
-		uint32(75), //length
+		uint32(441), //length
 		messageID,
+		/*RO  Spec */
 		uint16(177),  //RO Spec
-		uint16(65), //length
+		uint16(431), //length
 		uint32(123), //RO Spec ID
 		uint8(0), //Priority
 		uint8(0), //State
+		/*RO Bound Spec */
 		uint16(178),  //RO Bound Spec
 		uint16(18),  //length
 		uint16(179),  //RO Spec Start Triger
@@ -179,18 +181,183 @@ func AddRospec(messageID uint32) []byte {
 		uint16(9),  //length
 		uint8(0), //RO Spec Stop Triger Type
 		uint32(0), //Duration triger value
+		/*AI Spec */
 		uint16(183), //AI Spec
-		uint16(24),  //length
-		uint16(1),  //Antena Count
-		uint16(0),  //Antena ID
+		uint16(390),  //length
+		uint16(4),  //Antena Count
+		uint16(1),  //Antena ID
+    uint16(2),  //Antena ID
+		uint16(3),  //Antena ID
+		uint16(4),  //Antena ID
 		uint16(184), //AI Spec Stop Triger
 		uint16(9),  //length
-    uint8(1), //AI Spec Stop Triger Type
-		uint32(5000), //Duration triger value
+    uint8(0), //AI Spec Stop Triger Type
+		uint32(0), //Duration triger value
 		uint16(186), //AI Spec Invertory Parametr Spec ID
-		uint16(7),  //length
+		uint16(367),  //length
 		uint16(1234), //Invertory Parametr Spec ID
 		uint8(1), //Protocol ID
+		/*TLV Antena 1 */
+		uint16(184), //Antena Configuration
+		uint16(90),  //length
+		uint16(1),  //Antena ID
+		uint16(224), //RF Transmiter
+		uint16(10),  //length
+		uint16(0),  //HOP Table ID
+		uint16(1),  //Channel Index
+		uint16(81),  //Transmit Power
+		uint16(330), //C1 G2 Ibventory Command
+		uint16(74),  //length
+		uint8(0),  //Tag Inventory State aware
+		uint16(335), //RF Control
+		uint16(8),  //length
+		uint16(1000),  //Mode Index
+		uint16(0),  //Tari
+		uint16(336), //Sigulation Control
+		uint16(11),  //length
+		uint8(128),  //Session
+		uint16(32),  //Tag Population
+		uint32(0),  //Tag Transmit Time
+		uint16(1023), //Inventory Search mode
+		uint16(14),  //length
+    uint32(25882),  //Tag Transmit Time
+		uint32(23),  //Parametr type
+		uint16(2),  //Inventory Search mode value
+		uint16(1023), //Fixed Frequency List
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(26),  //Parametr type
+		uint16(1),  //Fixed Frequency mode
+		uint16(0),  //Reserverd
+		uint16(0),  //Number Channels
+		uint16(1023), //Low Dyte Cycle
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(28),  //Parametr type
+		uint16(0),  //Low Dyte Cycle mode
+		uint16(0),  //Empty field timeout
+		uint16(0),  //Field Ping Timeout
+		/*TLV Antena 2 */
+		uint16(184), //Antena Configuration
+		uint16(90),  //length
+		uint16(2),  //Antena ID
+		uint16(224), //RF Transmiter
+		uint16(10),  //length
+		uint16(0),  //HOP Table ID
+		uint16(1),  //Channel Index
+		uint16(81),  //Transmit Power
+		uint16(330), //C1 G2 Ibventory Command
+		uint16(74),  //length
+		uint8(0),  //Tag Inventory State aware
+		uint16(335), //RF Control
+		uint16(8),  //length
+		uint16(1000),  //Mode Index
+		uint16(0),  //Tari
+		uint16(336), //Sigulation Control
+		uint16(11),  //length
+		uint8(128),  //Session
+		uint16(32),  //Tag Population
+		uint32(0),  //Tag Transmit Time
+		uint16(1023), //Inventory Search mode
+		uint16(14),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(23),  //Parametr type
+		uint16(2),  //Inventory Search mode value
+		uint16(1023), //Fixed Frequency List
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(26),  //Parametr type
+		uint16(1),  //Fixed Frequency mode
+		uint16(0),  //Reserverd
+		uint16(0),  //Number Channels
+		uint16(1023), //Low Dyte Cycle
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(28),  //Parametr type
+		uint16(0),  //Low Dyte Cycle mode
+		uint16(0),  //Empty field timeout
+		uint16(0),  //Field Ping Timeout
+		/*TLV Antena 3 */
+		uint16(184), //Antena Configuration
+		uint16(90),  //length
+		uint16(3),  //Antena ID
+		uint16(224), //RF Transmiter
+		uint16(10),  //length
+		uint16(0),  //HOP Table ID
+		uint16(1),  //Channel Index
+		uint16(81),  //Transmit Power
+		uint16(330), //C1 G2 Ibventory Command
+		uint16(74),  //length
+		uint8(0),  //Tag Inventory State aware
+		uint16(335), //RF Control
+		uint16(8),  //length
+		uint16(1000),  //Mode Index
+		uint16(0),  //Tari
+		uint16(336), //Sigulation Control
+		uint16(11),  //length
+		uint8(128),  //Session
+		uint16(32),  //Tag Population
+		uint32(0),  //Tag Transmit Time
+		uint16(1023), //Inventory Search mode
+		uint16(14),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(23),  //Parametr type
+		uint16(2),  //Inventory Search mode value
+		uint16(1023), //Fixed Frequency List
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(26),  //Parametr type
+		uint16(1),  //Fixed Frequency mode
+		uint16(0),  //Reserverd
+		uint16(0),  //Number Channels
+		uint16(1023), //Low Dyte Cycle
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(28),  //Parametr type
+		uint16(0),  //Low Dyte Cycle mode
+		uint16(0),  //Empty field timeout
+		uint16(0),  //Field Ping Timeout
+		/*TLV Antena 4 */
+		uint16(184), //Antena Configuration
+		uint16(90),  //length
+		uint16(4),  //Antena ID
+		uint16(224), //RF Transmiter
+		uint16(10),  //length
+		uint16(0),  //HOP Table ID
+		uint16(1),  //Channel Index
+		uint16(81),  //Transmit Power
+		uint16(330), //C1 G2 Ibventory Command
+		uint16(74),  //length
+		uint8(0),  //Tag Inventory State aware
+		uint16(335), //RF Control
+		uint16(8),  //length
+		uint16(1000),  //Mode Index
+		uint16(0),  //Tari
+		uint16(336), //Sigulation Control
+		uint16(11),  //length
+		uint8(128),  //Session
+		uint16(32),  //Tag Population
+		uint32(0),  //Tag Transmit Time
+		uint16(1023), //Inventory Search mode
+		uint16(14),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(23),  //Parametr type
+		uint16(2),  //Inventory Search mode value
+		uint16(1023), //Fixed Frequency List
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(26),  //Parametr type
+		uint16(1),  //Fixed Frequency mode
+		uint16(0),  //Reserverd
+		uint16(0),  //Number Channels
+		uint16(1023), //Low Dyte Cycle
+		uint16(18),  //length
+		uint32(25882),  //Tag Transmit Time
+		uint32(28),  //Parametr type
+		uint16(0),  //Low Dyte Cycle mode
+		uint16(0),  //Empty field timeout
+		uint16(0),  //Field Ping Timeout
+		/*RO Report Spec */
 		uint16(237), //RO Report Spec
 		uint16(13),  //length
 		uint8(2), //RO Report triger
