@@ -198,7 +198,7 @@ func AddRospec(messageID uint32) []byte {
 		uint16(1234), //Invertory Parametr Spec ID
 		uint8(1), //Protocol ID
 		/*TLV Antena 1 */
-		uint16(184), //Antena Configuration
+		uint16(222), //Antena Configuration
 		uint16(90),  //length
 		uint16(1),  //Antena ID
 		uint16(224), //RF Transmiter
@@ -238,7 +238,7 @@ func AddRospec(messageID uint32) []byte {
 		uint16(0),  //Empty field timeout
 		uint16(0),  //Field Ping Timeout
 		/*TLV Antena 2 */
-		uint16(184), //Antena Configuration
+		uint16(222), //Antena Configuration
 		uint16(90),  //length
 		uint16(2),  //Antena ID
 		uint16(224), //RF Transmiter
@@ -278,7 +278,7 @@ func AddRospec(messageID uint32) []byte {
 		uint16(0),  //Empty field timeout
 		uint16(0),  //Field Ping Timeout
 		/*TLV Antena 3 */
-		uint16(184), //Antena Configuration
+		uint16(222), //Antena Configuration
 		uint16(90),  //length
 		uint16(3),  //Antena ID
 		uint16(224), //RF Transmiter
@@ -318,7 +318,7 @@ func AddRospec(messageID uint32) []byte {
 		uint16(0),  //Empty field timeout
 		uint16(0),  //Field Ping Timeout
 		/*TLV Antena 4 */
-		uint16(184), //Antena Configuration
+		uint16(222), //Antena Configuration
 		uint16(90),  //length
 		uint16(4),  //Antena ID
 		uint16(224), //RF Transmiter
