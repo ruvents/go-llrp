@@ -200,7 +200,7 @@ func AddRospec(messageID uint32) []byte {
 		uint16(18),  //length
 		uint16(179),  //RO Spec Start Triger
 		uint16(5),  //length
-		uint8(0), //RO Spec Start Triger Type
+		uint8(1), //RO Spec Start Triger Type
 		uint16(182),  //RO Spec Stop Triger
 		uint16(9),  //length
 		uint8(0), //RO Spec Stop Triger Type
@@ -385,10 +385,10 @@ func AddRospec(messageID uint32) []byte {
 		uint16(237), //RO Report Spec
 		uint16(13),  //length
 		uint8(2), //RO Report triger
-		uint16(0),  //N
+		uint16(1),  //N
 		uint16(238), //RO Report Spec
 		uint16(6),  //length
-		uint16(0),  //Param
+		uint16(7744),  //Param
 	}
 	return Pack(data)
 }
