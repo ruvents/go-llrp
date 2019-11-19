@@ -49,6 +49,19 @@ func SetReaderConfig(messageID uint32) []byte {
 	return Pack(data)
 }
 
+// SetReaderConfig generates SetReaderConfig message.
+func SetEnableMode(messageID uint32) []byte {
+	var data = []interface{}{
+		uint16(ImpinjEnableCutomMessageHeader),
+		uint32(19), // Length
+		messageID,                     // ID
+		uint32(25882),
+		uint8(21),
+		uint32(0),
+	}
+	return Pack(data)
+}
+
 // SetReaderConfigResponse generates SetReaderConfigResponse message.
 func SetReaderConfigResponse(messageID uint32) []byte {
 	llrpStatus := Status()
@@ -120,6 +133,17 @@ func GetReaderConfigResponse(messageID uint32) []byte {
 	// for i := 1; i <= numOfAntennas; i++ {
 	// 	x = append(x, AntennaConfiguration(uint16(i))...)
 	// }
+	return Pack(data)
+}
+
+//DeleteRospecResponse : Delete RoSpec Response
+func DeleteAcessSpec(messageID uint32) []byte {
+	var data = []interface{}{
+		uint16(DeleteAccessSpecHeader),
+		uint32(14), //length
+		messageID,
+		uint32(0),
+	}
 	return Pack(data)
 }
 
