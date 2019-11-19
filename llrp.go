@@ -32,6 +32,8 @@ const (
 	EnableRospecHeader                = 1048 // type 24
 	EnableRospecResponseHeader        = 1058 // type 34
 	ImpinjEnableCutomMessageHeader    = 2047 // type 1023
+	StartRospecHeader                = 1046 // type 22
+	StartRospecResponseHeader        = 1056 // type 32
 )
 
 // Pack the data into (partial) LLRP packet payload.

@@ -136,6 +136,17 @@ func DeleteAccessSpecResponse(messageID uint32) []byte {
 }
 
 //DeleteRospecResponse : Delete RoSpec Response
+func DeleteRospec(messageID uint32) []byte {
+	var data = []interface{}{
+		uint16(DeleteRospecHeader),
+		uint32(14), //length
+		messageID,
+		uint32(0),
+	}
+	return Pack(data)
+}
+
+//DeleteRospecResponse : Delete RoSpec Response
 func DeleteRospecResponse(messageID uint32) []byte {
 	llrpStatus := Status()
 	var data = []interface{}{
@@ -147,6 +158,47 @@ func DeleteRospecResponse(messageID uint32) []byte {
 	return Pack(data)
 }
 
+
+//AddRospec : Add ROSpec Response
+func AddRospec(messageID uint32) []byte {
+	var data = []interface{}{
+		uint16(AddRospecHeader),
+		uint32(75), //length
+		messageID,
+		uint16(177),  //RO Spec
+		uint16(65), //length
+		uint32(123), //RO Spec ID
+		uint8(0), //Priority
+		uint8(0), //State
+		uint16(178),  //RO Bound Spec
+		uint16(18),  //length
+		uint16(179),  //RO Spec Start Triger
+		uint16(5),  //length
+		uint8(0), //RO Spec Start Triger Type
+		uint16(182),  //RO Spec Stop Triger
+		uint16(9),  //length
+		uint8(0), //RO Spec Stop Triger Type
+		uint32(0), //Duration triger value
+		uint16(183), //AI Spec
+		uint16(24),  //length
+		uint16(1),  //Antena Count
+		uint16(0),  //Antena ID
+		uint16(184), //AI Spec Stop Triger
+		uint16(9),  //length
+    uint8(1), //AI Spec Stop Triger Type
+		uint32(5000), //Duration triger value
+		uint16(186), //AI Spec Invertory Parametr Spec ID
+		uint16(7),  //length
+		uint16(1234), //Invertory Parametr Spec ID
+		uint8(1), //Protocol ID
+		uint16(237), //RO Report Spec
+		uint16(13),  //length
+		uint8(2), //RO Report triger
+		uint16(0),  //N
+		uint16(0),  //Param
+	}
+	return Pack(data)
+}
 //AddRospecResponse : Add ROSpec Response
 func AddRospecResponse(messageID uint32) []byte {
 	llrpStatus := Status()
@@ -159,6 +211,17 @@ func AddRospecResponse(messageID uint32) []byte {
 	return Pack(data)
 }
 
+//EnableRospec : Enabled Rospec Response
+func EnableRospec(messageID uint32) []byte {
+	var data = []interface{}{
+		uint16(EnableRospecHeader),
+		uint32(14), //length
+		messageID,
+		uint32(123),
+	}
+	return Pack(data)
+}
+
 //EnableRospecResponse : Enabled Rospec Response
 func EnableRospecResponse(messageID uint32) []byte {
 	llrpStatus := Status()
@@ -167,6 +230,17 @@ func EnableRospecResponse(messageID uint32) []byte {
 		uint32(18), //length
 		messageID,
 		llrpStatus,
+	}
+	return Pack(data)
+}
+
+//StartRospec : Enabled Rospec Response
+func StartRospec(messageID uint32) []byte {
+	var data = []interface{}{
+		uint16(StartRospecHeader),
+		uint32(14), //length
+		messageID,
+		uint32(123),
 	}
 	return Pack(data)
 }
