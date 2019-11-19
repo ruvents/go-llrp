@@ -185,8 +185,8 @@ func AddRospec(messageID uint32) []byte {
 		uint16(0),  //Antena ID
 		uint16(184), //AI Spec Stop Triger
 		uint16(9),  //length
-    uint8(1), //AI Spec Stop Triger Type
-		uint32(5000), //Duration triger value
+    uint8(0), //AI Spec Stop Triger Type
+		uint32(0), //Duration triger value
 		uint16(186), //AI Spec Invertory Parametr Spec ID
 		uint16(7),  //length
 		uint16(1234), //Invertory Parametr Spec ID
